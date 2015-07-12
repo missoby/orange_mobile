@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="padding"></div>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label">Vous avez un code ?</label>
+            <div class="col-sm-12">
+                <input type="password" class="form-control" name="code" ng-model="code" placeholder="Entrez votre code ici" pattern="[0-9]*" inputmode="numeric">
+
+            </div>
+        </div>
+
+        <div class="form-group modal_class">
+            <div class="col-sm-12">
+                <button id="code_btn" type="button" class="btn btn-default btn-lg btn-block">Continuer</button>
+            </div>
+        </div>
+    </form>
+    <p class="text-center white">
+        Un code d’accès est envoyé via SMS<br/>
+        Il peut prendre jusqu’à une minute,<br/>
+        merci pour votre patience.
+    </p>
+    <img src="img/orange.png" alt="orange" class="logo_footer"/>
+</div>

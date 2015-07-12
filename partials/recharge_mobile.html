@@ -1,0 +1,80 @@
+<div id="panel" class="container">
+    <div class="navbar-header">
+        <button class="navbar-toggle collapsed toggle-button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand"><img src="img/logo_mobimeny.png" alt="" class="img-responsive "/></div>
+    </div>
+
+    <section class="bg_white">  
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <div class="pull-left">Bienvenue, <strong>{{rechargeCtrl.profile.name}}</strong></div>
+                <div class="pull-right solde">Solde: <strong>40.547 DT</strong></div>
+                <div class="clear"></div>
+            </div>
+            <div class="panel-body">
+                <h1 class="inscription">Mobile Orange</h1>
+                <p class="text-center introduction">Veuillez introduire le numéro<br/>de mobile et le montant :</p>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-12 infos">
+                            <span id="num_tel" data-target="#myModal" data-toggle="modal"></span>
+                            <input type="text" class="form-control" name="num_tel" ng-model="num_tel" placeholder="Numéro de télephone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12 infos">
+                            <span id="montant" data-target="#myModal" data-toggle="modal"></span>
+                            <input type="text" class="form-control" name="montant" ng-model="montant" placeholder="Montant">
+                        </div>
+                    </div>
+
+                    <div class="form-group modal_class">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-default btn-lg btn-block">Recharge</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-body">
+                    <p class="text-center"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+//***********respensive menu***************
+    var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70,
+        'touch': false
+    });
+
+    // Toggle button
+    document.querySelector('.toggle-button').addEventListener('click', function () {
+        slideout.toggle();
+    });
+    $("#montant").on("click", function () {
+        $(".modal-header p").html("Veuillez indiquer le montant à recharger en millimes qui doit étre un multiple de 1 DT<br/>Exemple : pour recharger 5 DT saisir 5000");
+    });
+    $("#num_tel").on("click", function () {
+        $(".modal-header p").html("Veuillez saisir le numéro orange mobile, clé 3G ou flybox à recharger");
+    });
+
+</script>

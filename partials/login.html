@@ -1,0 +1,38 @@
+<div class="container">
+<div class="padding"></div>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label">Entrer votre numéro orange</label>
+        <div class="col-sm-12">
+            <span>+216</span>
+            <input type="tel" class="form-control num_tel" name="tel" ng-model="tel">
+        </div>
+    </div>
+
+    <div class="form-group modal_class">
+        <div class="col-sm-12">
+            <button type="button" class="btn btn-default btn-lg btn-block" data-target="#myModal">Continuer</button>
+        </div>
+
+    </div>
+    
+</form>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-body">
+                    <p>Ce numéro est il correct ?<br/><strong>(+216) {{tel}}</strong></p>
+                    <p>un SMS avec votre code d'accès sera envoyé à ce numéro.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="" id="modal_btn" class="btn btn-primary" data-dismiss="modal">Oui</a>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Non</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<img src="img/orange.png" alt="orange" class="logo_footer"/>
+</div>

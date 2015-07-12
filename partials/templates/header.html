@@ -1,0 +1,57 @@
+<nav id="menu">
+    <div class="logo_menu">
+        <img src="img/logo_mobimeny.png" alt="" class="img-responsive"/>
+    </div>
+    <div class="img_profil">
+        <img src="{{menuCtrl.profile.img}}" alt="profile" class="img-circle img_profile_btn img_design">
+    </div>
+    <h4 class="media-heading">{{menuCtrl.profile.name}}</h4>
+    <a ui-sref="edit_profil" class="text-center link_profil">Editer</a>
+
+    <ul class="nav navbar-nav">
+        <li class="dropdown dropdown-header profil" ui-sref-active="active">
+            <p class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Mon Profil
+            </p>
+            <ul class="dropdown-menu">
+                <li ui-sref-active="active"><a ui-sref="historique">Historiques</a></li>
+                <li ui-sref-active="active"><a ui-sref="blocage_carte">Blocage</a></li>
+                <li ui-sref-active="active"><a ui-sref="desinscription">Désinscription</a></li>
+                <li ui-sref-active="active"><a ui-sref="renouvellement">Renouvellement</a></li>
+            </ul>
+        </li>
+        <li class="dropdown dropdown-header services" ui-sref-active="active">
+            <p class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Services
+            </p>
+            <ul class="dropdown-menu">
+                <li ui-sref-active="active" class="sous_menu">
+                    <a ui-sref="recharge_mobile" class="cartes">Recharge mobile Orange</a>
+                </li>
+
+                <li class="dropdown dropdown-header sous_menu" ui-sref-active="active">
+                    <p class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Paiement de Facture
+                    </p>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="facture_steg">Steg</a></li>
+                        <li ui-sref-active="active"><a ui-sref="facture_sonede">Sonede</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown dropdown-header sous_menu" ui-sref-active="active">
+                    <p class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Mandats
+                    </p>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="mandat_minute">Mandat Minute</a></li>
+                        <li ui-sref-active="active"><a ui-sref="mandat_bource">Mandat Bource</a></li>
+                        <li ui-sref-active="active"><a ui-sref="mandat_western_union">Mandat Western Union</a></li>
+                    </ul>
+                </li>
+                <li ui-sref-active="active" class="sous_menu"><a ui-sref="virement_compte">Virement compte à compte</a></li>
+                <li ui-sref-active="active" class="sous_menu"><a ui-sref="micro_credit">Micro crédit</a></li>
+            </ul>
+        <li class="boutique" ui-sref-active="active"><a ui-sref="shows">Boutiques Orange</a></li>
+        <li class="deconnexion" ui-sref-active="active"><a href="" ng-click="deconectLogin()">Déconnexion</a></li>
+    </ul>
+</nav>

@@ -1,0 +1,55 @@
+<div id="panel" class="container panel_historique">
+    <div class="navbar-header">
+        <button class="navbar-toggle collapsed toggle-button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand"><img src="img/logo_mobimeny.png" alt="" class="img-responsive "/></div>
+    </div>
+
+    <div class="media">
+
+        <img src="{{renouvellementCtrl.profile.img}}" alt="profile" class="img-circle img_profile_btn img_design">
+        <div class="media-body">
+            <h4 class="media-heading">{{renouvellementCtrl.profile.name}}</h4>
+            <a ui-sref="edit_profil"><small>Editer</small></a>
+        </div>
+    </div>
+
+    <section class="bg_white">  
+        <div class="panel panel-danger">
+            <div class="panel-heading solde">Votre Solde au 22/09/014 est <strong>45.547 DT</strong></div>
+            <div class="panel-body">
+                <h1 class="inscription">Renouvellement de carte</h1>
+                <p class="text-center introduction">Vous pouvez renouveller votre carte e-dinar Smart via 
+                    le service Mobimoney. Votre compte e-dinar Smart sera débité des frais de renouvellement
+                </p>
+                <button class="btn btn-default btn-lg btn-block" ng-click="confirmation()">Confirmation</button>
+            
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<script>
+//***********respensive menu***************
+    var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70,
+        'touch': false
+    });
+
+    // Toggle button
+    document.querySelector('.toggle-button').addEventListener('click', function () {
+        slideout.toggle();
+    });
+    
+   $(".navbar-nav a").on("click", function(){
+        $("body").removeClass("slideout-open");
+    });
+</script>

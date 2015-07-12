@@ -1,0 +1,117 @@
+<div id="panel" class="container">
+    <div class="navbar-header">
+        <button class="navbar-toggle collapsed toggle-button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand"><img src="img/logo_mobimeny.png" alt="" class="img-responsive "/></div>
+    </div>
+
+
+    <section class="bg_white">  
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <div class="pull-left">Bienvenue, <strong>{{stegCtrl.profile.name}}</strong></div>
+                <div class="pull-right solde">Solde: <strong>40.547 DT</strong></div>
+                <div class="clear"></div>
+            </div>
+            <div class="panel-body">
+                <h1 class="inscription">Facture Steg</h1>
+                <p class="text-center introduction">Veuillez introduire le données relatives à votre facture :</p>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-12 infos">
+                            <span id="code_organisme" data-target="#myModal" data-toggle="modal"></span>
+                            <input type="text" class="form-control" name="code_organisme" ng-model="code_organisme" placeholder="Code organisme">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12 infos">
+                            <span id="montant" data-target="#myModal" data-toggle="modal"></span>
+                            <input type="text" class="form-control" name="montant" ng-model="montant" placeholder="Montant en millimes">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12 infos">
+                            <span id="ref" data-target="#myModal" data-toggle="modal"></span>
+                            <input type="text" class="form-control" name="ref_facture" ng-model="ref_facture" placeholder="Référence de la facture">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label class="text-center">Période de consommation</label>
+                        </div>
+                    </div>
+                    <div class="form-group datepicker_input">
+                        <div class="col-sm-12">
+                            <span>Du</span>
+                            <input type="date" ng-model="date_du">
+
+                        </div>
+                    </div>
+                    <div class="form-group datepicker_input">
+                        <div class="col-sm-12">
+                            <span>Au</span>
+                            <input type="date" ng-model="date_au">
+                        </div>
+                    </div>
+                    <div class="form-group modal_class">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-default btn-lg btn-block">Paiement</button>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <img src="img/steg_code.jpg" alt="" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+//***********respensive menu***************
+    var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70,
+        'touch': false
+    });
+
+    // Toggle button
+    document.querySelector('.toggle-button').addEventListener('click', function () {
+        slideout.toggle();
+    });
+    $("#code_organisme").on("click", function () {
+        $(".modal-header img").attr("src", "img/steg_code.jpg");
+    });
+
+    $("#montant").on("click", function () {
+        $(".modal-header img").attr("src", "img/steg_montant.jpg");
+    });
+    $("#ref").on("click", function () {
+        $(".modal-header img").attr("src", "img/steg_ref.jpg");
+    });
+</script>

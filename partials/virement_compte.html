@@ -1,0 +1,79 @@
+<div id="panel" class="container">
+    <div class="navbar-header">
+        <button class="navbar-toggle collapsed toggle-button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand"><img src="img/logo_mobimeny.png" alt="" class="img-responsive "/></div>
+    </div>
+
+
+    <section class="bg_white">  
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <div class="pull-left">Bienvenue, <strong>{{virementCtrl.profile.name}}</strong></div>
+                <div class="pull-right solde">Solde: <strong>40.547 DT</strong></div>
+                <div class="clear"></div>
+            </div>
+            <div class="panel-body">
+                <h1 class="inscription">Virement compte à compte</h1>
+                <p class="text-center introduction">Veuillez introduire le données<br/>relatives à votre virement :</p>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-12 infos">
+                            <span id="montant" data-target="#myModal" data-toggle="modal"></span>
+                            <input type="text" class="form-control" name="montant" ng-model="montant" placeholder="Montant du virement">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group modal_class">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-default btn-lg btn-block">Confirmation</button>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-body">
+                    <p class="text-center"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+//***********respensive menu***************
+    var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70,
+        'touch': false
+    });
+
+    // Toggle button
+    document.querySelector('.toggle-button').addEventListener('click', function () {
+        slideout.toggle();
+    });
+    $("#montant").on("click", function () {
+        $(".modal-header p").html("Veuillez saisir le montant du virement en millimes entre 5000 millimes et 100000 millimes.<br/>Exemple : pour un virement de 100 DT saisir 100000");
+    });
+
+
+
+</script>

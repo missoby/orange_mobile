@@ -1,0 +1,52 @@
+<div id="panel" class="container">
+    <div class="navbar-header">
+        <button class="navbar-toggle collapsed toggle-button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand"><img src="img/logo_mobimeny.png" alt="" class="img-responsive "/></div>
+    </div>
+
+    <section class="bg_white">  
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <div class="pull-left">Bienvenue, <strong>{{ShowsCtrl.profile.name}}</strong></div>
+                <div class="pull-right solde">Solde: <strong>40.547 DT</strong></div>
+                <div class="clear"></div>
+            </div>
+            <div class="panel-body">
+                <h1 class="inscription">Mandat Minute</h1>
+                <p class="text-center introduction">Veuillez introduire le données<br/>relatives à votre Mandat :</p>
+
+                <select class="form-control" ng-model="filter.system_id" ng-options="system.id as system.CNT_STORE_GOUVERNAT for system in systems">
+                    <option value="">Choissisez votre Gouvernat</option>
+                </select>
+
+                <ul class="list-group store">
+                    <li ng-repeat="show in shows| customFilter: filter" class="list-group-item">
+                        {{show.CONTENT_TITLE}}
+                    </li>
+                </ul>
+            </div>
+
+    </section>
+</div>
+
+
+<script>
+//***********respensive menu***************
+    var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70,
+        'touch': false
+    });
+
+    // Toggle button
+    document.querySelector('.toggle-button').addEventListener('click', function () {
+        slideout.toggle();
+    });
+</script>

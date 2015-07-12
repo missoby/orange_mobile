@@ -1,0 +1,48 @@
+<div class="container">
+<div class="padding"></div>
+<h5 class="text-center">Entrer vos details</h5>
+<a href="" class="btn btn-primary facebook">
+    Utiliser vos détails Facebook
+</a>
+<div class="title"><span>ou</span></div>
+ 
+<form class="form-horizontal" ng-submit="submit()">
+    <img src="img/profile.jpg" alt="profile" class="img-circle img_profile_btn img_design" id="smallImage" data-target="#myModal" data-toggle="modal">
+
+    <div class="form-group">
+
+
+        <div class="col-sm-12">
+            <input type="text" class="form-control" name="name" ng-model="name" placeholder="Votre nom">
+
+        </div>
+    </div>
+
+    <div class="form-group modal_class">
+        <div class="col-sm-12">
+            <input type="submit" class="btn btn-default btn-lg btn-block" value="Continuer"/>
+        </div>
+    </div>
+</form>
+<img src="img/orange.png" alt="orange" class="logo_footer"/>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <div class="modal-body">
+                    <p>Vous avez le choix entre : </p>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="capturePhoto();" class="btn btn-primary" data-dismiss="modal">Capture photos</button>
+                    <button type="button" class="btn btn-primary" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);" data-dismiss="modal">Gallerie de photos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

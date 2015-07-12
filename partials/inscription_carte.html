@@ -1,0 +1,70 @@
+<div id="panel" class="container">
+    <div class="navbar-header">
+        <button class="navbar-toggle collapsed toggle-button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand"><img src="img/logo_mobimeny.png" alt="" class="img-responsive "/></div>
+    </div>
+
+
+    <section class="bg_white">  
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <div class="pull-left">Bienvenue, <strong>{{inscriptionCtrl.profile.name}}</strong></div>
+                <div class="pull-right solde">Solde: <strong>40.547 DT</strong></div>
+                <div class="clear"></div>
+            </div>
+            <div class="panel-body">
+                <h1 class="inscription">Inscription</h1>
+                <p class="text-center introduction">Veuillez introduire les données<br/>relatives à votre carte e-dinar smart</p>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="code_carte" ng-model="code_carte" placeholder="4 derniers chiffres">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" name="code_carte" ng-model="code_confientiel" placeholder="Code confidentiel">
+                        </div>
+                    </div>
+                    
+                      <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="code_carte" ng-model="cin" placeholder="Numéro de CIN">
+                        </div>
+                    </div>
+
+                    <div class="form-group modal_class">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-default btn-lg btn-block">Ajouter votre carte</button>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<script>
+//***********respensive menu***************
+    var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70,
+        'touch': false
+    });
+
+    // Toggle button
+    document.querySelector('.toggle-button').addEventListener('click', function () {
+        slideout.toggle();
+    });
+</script>
