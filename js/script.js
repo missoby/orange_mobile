@@ -2,308 +2,308 @@ var app = angular.module('app', ['ui.router', 'myFilters']);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
 
-            $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/home');
 
-            $stateProvider
-                .state('/home', {
-                    url: "/home",
-                    templateUrl: "partials/home.html",
-                    controller: 'homeController',
-                    controllerAs: 'homeCtrl'
-                })
+    $stateProvider
+        .state('/home', {
+            url: "/home",
+            templateUrl: "partials/home.html",
+            controller: 'homeController',
+            controllerAs: 'homeCtrl'
+        })
 
-                .state('login', {
-                    url: "/login",
-                    templateUrl: "partials/login.html",
-                    controller: 'loginController',
-                    controllerAs: 'loginCtrl'
-                })
+        .state('login', {
+            url: "/login",
+            templateUrl: "partials/login.html",
+            controller: 'loginController',
+            controllerAs: 'loginCtrl'
+        })
 
-                .state('login_poste', {
-                    url: "/login_poste",
-                    templateUrl: "partials/login_poste.html",
-                    controller: 'loginPosteController',
-                    controllerAs: 'loginPosteCtrl'
-                })
+        .state('login_poste', {
+            url: "/login_poste",
+            templateUrl: "partials/login_poste.html",
+            controller: 'loginPosteController',
+            controllerAs: 'loginPosteCtrl'
+        })
 
-                .state('confirmation_login', {
-                    url: "/confirmation_login",
-                    templateUrl: 'partials/code_sms.html',
-                    controller: 'codeController',
-                    controllerAs: 'codeCtrl'
-                })
+        .state('confirmation_login', {
+            url: "/confirmation_login",
+            templateUrl: 'partials/code_sms.html',
+            controller: 'codeController',
+            controllerAs: 'codeCtrl'
+        })
 
-                .state('profile', {
-                    url: "/profile",
-                    templateUrl: 'partials/profile.html',
+        .state('profile', {
+            url: "/profile",
+            templateUrl: 'partials/profile.html',
+            controller: 'profileController',
+            controllerAs: 'profileCtrl'
+        })
+
+        .state('inscription', {
+            url: "/inscription",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/inscription_carte.html',
+                    controller: 'incriptionController',
+                    controllerAs: 'inscriptionCtrl'
+                }
+            }
+        })
+
+        .state('historique', {
+            url: "/historique",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/historique.html',
+                    controller: 'historiqueController',
+                    controllerAs: 'historiqueCtrl'
+                }
+            }
+        })
+
+        .state('recharge_orange', {
+            url: "/recharge_orange",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/recharge_orange.html',
+                    controller: 'rechargeOrangeController',
+                    controllerAs: 'rechargeCtrl'
+                }
+            }
+        })
+
+        .state('edit_profil', {
+            url: "/edit_profil",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/edit_profil.html',
                     controller: 'profileController',
                     controllerAs: 'profileCtrl'
-                })
+                }
+            }
+        })
 
-                .state('inscription', {
-                    url: "/inscription",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/inscription_carte.html',
-                            controller: 'incriptionController',
-                            controllerAs: 'inscriptionCtrl'
-                        }
-                    }
-                })
+        .state('desinscription', {
+            url: "/desinscription",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/desinscription.html',
+                    controller: 'desinscriptionController',
+                    controllerAs: 'desinscriptionCtrl'
+                }
+            }
+        })
 
-                .state('historique', {
-                    url: "/historique",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/historique.html',
-                            controller: 'historiqueController',
-                            controllerAs: 'historiqueCtrl'
-                        }
-                    }
-                })
+        .state('blocage_carte', {
+            url: "/blocage_carte",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/blocage.html',
+                    controller: 'blocageController',
+                    controllerAs: 'blocageCtrl'
+                }
+            }
+        })
 
-                .state('recharge_orange', {
-                    url: "/recharge_orange",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/recharge_orange.html',
-                            controller: 'rechargeOrangeController',
-                            controllerAs: 'rechargeCtrl'
-                        }
-                    }
-                })
+        .state('renouvellement', {
+            url: "/renouvellement",
+            views: {
+                'header': {
+                       templateUrl: 'partials/templates/header.html',
+                       controller: 'menuController',
+                       controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/renouvellement.html',
+                    controller: 'renouvellementController',
+                    controllerAs: 'renouvellementCtrl'
+                }
+            }
+        })
 
-                .state('edit_profil', {
-                    url: "/edit_profil",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/edit_profil.html',
-                            controller: 'profileController',
-                            controllerAs: 'profileCtrl'
-                        }
-                    }
-                })
+        .state('recharge_mobile', {
+            url: "/recharge_mobile",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/recharge_mobile.html',
+                    controller: 'rechargeController',
+                    controllerAs: 'rechargeCtrl'
+                }
+            }
+        })
 
-                .state('desinscription', {
-                    url: "/desinscription",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/desinscription.html',
-                            controller: 'desinscriptionController',
-                            controllerAs: 'desinscriptionCtrl'
-                        }
-                    }
-                })
+        .state('facture_sonede', {
+            url: "/facture_sonede",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/facture_sonede.html',
+                    controller: 'sonedeController',
+                    controllerAs: 'sonedeCtrl'
+                }
+            }
+        })
 
-                .state('blocage_carte', {
-                    url: "/blocage_carte",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/blocage.html',
-                            controller: 'blocageController',
-                            controllerAs: 'blocageCtrl'
-                        }
-                    }
-                })
+        .state('facture_steg', {
+            url: "/facture_steg",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/facture_steg.html',
+                    controller: 'stegController',
+                    controllerAs: 'stegCtrl'
+                }
+            }
+        })
 
-                .state('renouvellement', {
-                    url: "/renouvellement",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/renouvellement.html',
-                            controller: 'renouvellementController',
-                            controllerAs: 'renouvellementCtrl'
-                        }
-                    }
-                })
+        .state('mandat_minute', {
+            url: "/mandat_minute",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/mandat_minute.html',
+                    controller: 'mandatMinuteController',
+                    controllerAs: 'mandatMinuteCtrl'
+                }
+            }
+        })
 
-                .state('recharge_mobile', {
-                    url: "/recharge_mobile",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/recharge_mobile.html',
-                            controller: 'rechargeController',
-                            controllerAs: 'rechargeCtrl'
-                        }
-                    }
-                })
+        .state('mandat_bource', {
+            url: "/mandat_bource",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/mandat_bource.html',
+                    controller: 'mandatBourceController',
+                    controllerAs: 'mandatBourceCtrl'
+                }
+            }
+        })
 
-                .state('facture_sonede', {
-                    url: "/facture_sonede",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/facture_sonede.html',
-                            controller: 'sonedeController',
-                            controllerAs: 'sonedeCtrl'
-                        }
-                    }
-                })
+        .state('mandat_western_union', {
+            url: "/mandat_western_union",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/mandat_western_union.html',
+                    controller: 'mandatWesternUnionController',
+                    controllerAs: 'mandatWesternUnionCtrl'
+                }
+            }
+        })
 
-                .state('facture_steg', {
-                    url: "/facture_steg",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/facture_steg.html',
-                            controller: 'stegController',
-                            controllerAs: 'stegCtrl'
-                        }
-                    }
-                })
+        .state('micro_credit', {
+            url: "/micro_credit",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/micro_credit.html',
+                    controller: 'microCreditController',
+                    controllerAs: 'microCreditCtrl'
+                }
+            }
+        })
 
-                .state('mandat_minute', {
-                    url: "/mandat_minute",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/mandat_minute.html',
-                            controller: 'mandatMinuteController',
-                            controllerAs: 'mandatMinuteCtrl'
-                        }
-                    }
-                })
+        .state('shows', {
+            url: "/shows",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/boutiques.html',
+                    controller: 'ShowsController',
+                    controllerAs: 'ShowsCtrl'
 
-                .state('mandat_bource', {
-                    url: "/mandat_bource",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/mandat_bource.html',
-                            controller: 'mandatBourceController',
-                            controllerAs: 'mandatBourceCtrl'
-                        }
-                    }
-                })
+                }
+            }
+        })
 
-                .state('mandat_western_union', {
-                    url: "/mandat_western_union",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/mandat_western_union.html',
-                            controller: 'mandatWesternUnionController',
-                            controllerAs: 'mandatWesternUnionCtrl'
-                        }
-                    }
-                })
-
-                .state('micro_credit', {
-                    url: "/micro_credit",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/micro_credit.html',
-                            controller: 'microCreditController',
-                            controllerAs: 'microCreditCtrl'
-                        }
-                    }
-                })
-
-                .state('shows', {
-                    url: "/shows",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/boutiques.html',
-                            controller: 'ShowsController',
-                            controllerAs: 'ShowsCtrl'
-
-                        }
-                    }
-                })
-
-                .state('virement_compte', {
-                    url: "/virement_compte",
-                    views: {
-                        'header': {
-                            templateUrl: 'partials/templates/header.html',
-                            controller: 'menuController',
-                            controllerAs: 'menuCtrl'
-                        },
-                        'content': {
-                            templateUrl: 'partials/virement_compte.html',
-                            controller: 'virementController',
-                            controllerAs: 'virementCtrl'
-                        }
-                    }
-                })
+        .state('virement_compte', {
+            url: "/virement_compte",
+            views: {
+                'header': {
+                    templateUrl: 'partials/templates/header.html',
+                    controller: 'menuController',
+                    controllerAs: 'menuCtrl'
+                },
+                'content': {
+                    templateUrl: 'partials/virement_compte.html',
+                    controller: 'virementController',
+                    controllerAs: 'virementCtrl'
+                }
+            }
+        })
 
 
-                .state('shows.detail', {
-                    url: '/detail/:id',
-                    templateUrl: 'partials/details_boutique.html',
-                    controller: 'ShowsDetailController'
-                });
-    });
+        .state('shows.detail', {
+            url: '/detail/:id',
+            templateUrl: 'partials/details_boutique.html',
+            controller: 'ShowsDetailController'
+        });
+});
 
 /******************Contrôlleur d'authentification**********************/
 app.controller('homeController', function ($scope, $location) {
@@ -336,7 +336,7 @@ app.controller('loginPosteController', function ($scope, $location) {
 
 /******************Contrôlleur d'authentification**********************/
 app.controller('loginController', function ($scope) {
-    $scope.tel = ""
+    $scope.tel = "";
     $(".modal_class .btn").on("click", function () {
         //recupéré la valeur de l'input tel
         var tel = $scope.tel;
@@ -346,11 +346,11 @@ app.controller('loginController', function ($scope) {
             $(".modal_class .btn").attr("data-toggle", "modal");
             // en cliquant sur le boutton ok 
             $("#modal_btn").on("click", function () {
-                var minNumber = 1000; // le minimum de la valeur random
-                var maxNumber = 9998; // le maximum
+                var minNumber = 1000;
+                var maxNumber = 9999;
 
-                //afficher une valeur aléatoire
-                var randomnumber = Math.floor(Math.random() * (maxNumber + 1) + minNumber);
+                var randomnumber = Math.floor(Math.random() * ((maxNumber - minNumber) + 1) + minNumber);
+
                 alert(randomnumber);
 
                 // stoker les valeur dans une session
@@ -410,7 +410,7 @@ app.controller('profileController', function ($scope) {
         if ($scope.name == "") {
             alert("Veuillez saisir votre nom");
         } else {
-            alert("Félicitation votre profil est prêt");
+            alert("Félicitations ! Vous vous êtes inscrit au service Mobimoney avec succès. Vous pouvez commencer à utiliser l'application");
             tel = JSON.parse(window.localStorage.getItem("tel"));
 
             var session = new Object();
@@ -471,7 +471,6 @@ app.controller('blocageController', function ($scope) {
 });
 
 
-
 app.controller('desinscriptionController', function ($scope, $location) {
     session = JSON.parse(window.localStorage.getItem("session"));
     this.profile = session;
@@ -489,7 +488,6 @@ app.controller('desinscriptionController', function ($scope, $location) {
         }
     }
 });
-
 
 
 app.controller('renouvellementController', function ($scope) {
