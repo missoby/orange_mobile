@@ -2,7 +2,7 @@
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>MobiMoney</name>
     <description>
-        MobiMoey et une application dédier au poste
+        MobiMoney et une application dédier au poste
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
         Tritux
