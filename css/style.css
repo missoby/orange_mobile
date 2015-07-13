@@ -128,12 +128,12 @@ body {
     border-radius: 0;
     font-size: 16px;
     color: black;
-    margin: 0 30px;
+    margin: 0 25px;
 }
 
 #myModal .modal-footer {
     border: none;
-    padding: 0 10px 15px;
+    padding: 0 6px 15px;
 }
 
 #myModal .modal-header {
@@ -145,6 +145,8 @@ body {
     border: 2px solid #FF6700;
     color: #FF6700;
     font-weight: 700;
+    font-size: 12px;
+    padding: 7px 0;
 }
 
 #myModal .modal-footer .btn-primary {
